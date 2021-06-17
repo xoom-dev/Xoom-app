@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   userEmail : String;
   userPassword : String;
   loginForm : FormGroup;
+  error = "wrong user";
   constructor(private authService : AuthService, private router : Router) { }
 
   ngOnInit() {
@@ -36,6 +37,8 @@ export class LoginComponent implements OnInit {
       this.authService.message = response['message'];
       this.router.navigate(['home']);
 
+    }).catch(err_ =>{
+      this.error = "wrong username/ password"
     })
   }
 
