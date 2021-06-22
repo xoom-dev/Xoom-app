@@ -4,18 +4,25 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { 
-  AuthGuardService as AuthGuard 
-} from '../providers/auth-guard.service';
+
+import { ExternalApiComponent } from './external-api/external-api.component';
+import { AuthGuard } from '@auth0/auth0-angular';
 const route:Routes = [
-  { path: 'login', component : LoginComponent},
-  { path: 'home', component: HomeComponent, canActivate : [AuthGuard] },
-  // { path: '', component : LoginComponent },
+  { path: 'login', redirectTo: 'home'},
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home' },
+  { path: '**', redirectTo: 'home' },
+  {
+    path: 'external-api',
+    component: ExternalApiComponent,
+    canActivate: [AuthGuard],
+  },
+
 
 ]
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent],
+  declarations: [LoginComponent, HomeComponent, ExternalApiComponent],
   imports: [
     CommonModule,
     FormsModule,

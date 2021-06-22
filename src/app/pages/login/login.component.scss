@@ -12,7 +12,9 @@
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
     }
-    
+    .err{
+        color: #ffc312;
+    }
     .social_icon span{
     font-size: 60px;
     margin-left: 10px;
@@ -35,7 +37,7 @@
     }
     
     .input-group-prepend span{
-    width: 50px;
+    width: 50px !important;
     background-color: #FFC312;
     color: black;
     border:0 !important;

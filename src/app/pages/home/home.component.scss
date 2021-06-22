@@ -21,6 +21,29 @@ body {
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
   }
+  .btn-block, li{
+    margin: auto 10px;
+  }
+  .btn-block{
+    width: 115px;
+  }
+  .navbar{
+    letter-spacing: 1px !important;
+  }
+  ul{
+    list-style: none;
+    display: flex;
+    font-size: 14px;
+    color: #474e5d;
+  }
+  ul li{
+    color: #474e5d;
+    width: 100px;
+  }
+  .fa, .fas {
+    font-weight: 900;
+    font-size: 18px;
+}
   .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -40,4 +63,8 @@ body {
   .navbar-right{
       display: flex;
       flex-direction: row;
+      
+  }
+  .container{
+    flex-wrap: nowrap !important;
   }

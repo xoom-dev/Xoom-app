@@ -7,10 +7,10 @@ import {
 } from './providers/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'home', component: AppComponent, canActivate : [AuthGuard] },
-  { path: 'login', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) },
-  { path: '**', redirectTo: 'home' },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: 'home', component: AppComponent, canActivate : [AuthGuard] },
+  { path: '', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) },
+  // { path: '**', redirectTo: 'home' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

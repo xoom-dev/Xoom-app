@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/providers/auth.service';
+import { AuthenticationService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   userEmail : String;
   userPassword : String;
   loginForm : FormGroup;
-  error = "wrong user";
-  constructor(private authService : AuthService, private router : Router) { }
+  error;
+  constructor(private authService : AuthenticationService, private router : Router) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
