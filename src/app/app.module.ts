@@ -4,9 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
-import { environment as env } from '../environments/environment';
+import { ComponentsModule } from './components/components.module';
+import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -17,21 +23,18 @@ import { environment as env } from '../environments/environment';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
-    AuthModule.forRoot({
-      ...env.auth,
-      httpInterceptor: {
-        allowedList: [`${env.dev.serverUrl}/api/messages/protected-message`],
-      },
-    }),
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+    }
+    })
+    
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthHttpInterceptor,
-      multi: true,
-    },
-  ],
+  providers:[TranslateStore ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

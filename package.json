@@ -26,6 +26,8 @@
     "@angular/router": "~10.1.4",
     "@auth0/auth0-angular": "^1.5.1",
     "@nguniversal/express-engine": "^10.1.0",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "cropperjs": "^1.5.11",
     "express": "^4.15.2",
     "passport-auth0": "^1.4.0",

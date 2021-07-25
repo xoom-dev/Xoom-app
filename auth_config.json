@@ -1,6 +1,0 @@
-{
-    "domain": "dev-lb9p19h4.us.auth0.com",
-    "clientId": "MCUFZupth2Pyaocf3RZrSDq24PBf7vY5",
-    "audience": "https://express.sample",
-    "serverUrl": "http://localhost:6060"
-  }

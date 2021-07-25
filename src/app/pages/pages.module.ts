@@ -5,28 +5,31 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
-import { ExternalApiComponent } from './external-api/external-api.component';
-import { AuthGuard } from '@auth0/auth0-angular';
+import { EventDetailComponent } from './event-detail/event-detail.component';
+import { ComponentsModule } from '../components/components.module';
+import { TranslateModule } from '@ngx-translate/core';
 const route:Routes = [
   { path: 'login', redirectTo: 'home'},
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
-  {
-    path: 'external-api',
-    component: ExternalApiComponent,
-    canActivate: [AuthGuard],
-  },
+  // {
+  //   path: 'event-detail',
+  //   component: EventDetailComponent,
+  //   canActivate: [AuthGuard],
+  // },
 
 
 ]
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, ExternalApiComponent],
+  declarations: [LoginComponent, HomeComponent, EventDetailComponent],
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
+    TranslateModule,
     RouterModule.forChild(route)
   ],
 })
