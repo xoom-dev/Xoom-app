@@ -18,7 +18,6 @@ const route:Routes = [
   //   canActivate: [AuthGuard],
   // },
 
-
 ]
 
 @NgModule({
