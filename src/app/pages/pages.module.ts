@@ -4,7 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ComponentsModule } from '../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';

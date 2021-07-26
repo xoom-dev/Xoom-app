@@ -5,7 +5,15 @@
 
 export const environment = {
   production: false,
- 
+  firebaseConfig : {
+    apiKey: 'AIzaSyDT5xK6h1_3L-20tNd4YNSBCup8MbOU360',
+    authDomain: 'xoom-2145c.firebaseapp.com',
+    projectId: 'xoom-2145c',
+    storageBucket: 'xoom-2145c.appspot.com',
+    messagingSenderId: '294176152100',
+    appId: '1:294176152100:web:1a58c3c3f5f2620108d6b1',
+    measurementId: 'G-90K52K05WP'
+  },
 };
 
 /*

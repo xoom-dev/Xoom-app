@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
+import { AngularFireModule} from '@angular/fire';
 import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {environment} from '../environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -20,6 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -32,9 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
     }
     })
-    
+
   ],
-  providers:[TranslateStore ],
+  providers: [TranslateStore ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
