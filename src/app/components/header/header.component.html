@@ -5,13 +5,16 @@
    </div>
    <div class="right-menu">
        <ul>
-           <li>{{'browse event' | translate}}</li>
-           <li>organise</li>
+           <li (click)="navigate('/event',1)">{{'browse event' | translate}}</li>
+           <li (click)="navigate('/ticket', 2)">organise</li>
            <li>help</li>
            <li>Create an event</li>
-           <li>sign in</li>
+           <li (click) = "navigate('/login')">sign in</li>
        </ul>
    </div>
 
 </div>
+
+
+
 

@@ -2,5 +2,11 @@
     "name":"Name",
     "email":"Email",
     "password":"Password",
-    "phone":"Phone"
+    "phone":"Phone",
+    "sign_in":"Sign in",
+    "login": "Username or Email",
+    "field_required": "Field required",
+    "dont_have_acc": "don't have an account ?",
+    "register":"S'enregistrer",
+    "connect": "login"
 }

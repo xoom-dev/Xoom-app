@@ -9,6 +9,7 @@ import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SkeletonService } from './services/skeleton.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -30,11 +31,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-    }
+      }
     })
-    
+
   ],
-  providers:[TranslateStore ],
-    bootstrap: [AppComponent]
+  providers: [TranslateStore, SkeletonService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

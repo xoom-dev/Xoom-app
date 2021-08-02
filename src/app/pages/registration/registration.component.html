@@ -1,0 +1,114 @@
+<div class="container">
+	<div class="login-body">
+		<div class="form">
+			<div [formGroup]="registrationForm" (ngSubmit)="register()" class="content">
+				<h2>{{'register' | translate}}</h2>
+                <div class="group">
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'first_name'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="first_name" type="text" formControlName="firstName">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.firstName.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'last_name' | translate}}<span class="validation-error">*</span> </div>
+                            <input id="last_name" type="text" formControlName="lastName">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.lastName.valid && submitTrigger">{{'field_required' | translate}}</div>
+        
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'phone'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="phone" type="text" formControlName="phone">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.phone.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'pseudo' | translate}}<span class="validation-error">*</span> </div>
+                            <input id="pseudo" type="text" formControlName="username">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.username.valid && submitTrigger">{{'field_required' | translate}}</div>
+        
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'password'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="password" type="text" formControlName="password">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.password.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'confirm_password' | translate}}<span class="validation-error">*</span> </div>
+                            <input id="confirm_password" type="text" formControlName="confirm_password">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.confirm_password.valid && submitTrigger">{{'field_required' | translate}}</div>
+        
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'email'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="email" type="text" formControlName="email">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.email.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'confirm_email'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="confirm_email" type="text" formControlName="confirm_email">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.confirm_email.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                </div>
+				<h3>{{'address information' | translate}}</h3>
+                <div class="group">
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'country_of_residence'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="country" type="text" formControlName="country">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.country.valid&& submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'region_province_state'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="region" type="text" formControlName="region">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.region.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'street'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="street" type="text" formControlName="street">
+                        </div>
+                        <div class="validation-error" *ngIf="!registrationForm.controls.street.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                    <div class="obj">
+                        <div class="form-control">
+                            <div class="label">{{'postal_code'| translate}} <span class="validation-error">*</span> </div>
+                            <input id="pobox" type="text" formControlName="pobox">
+                        </div>
+                        <div class="validation-error" *ngIf=" !registrationForm.controls.pobox.valid && submitTrigger">{{'field_required' | translate}}</div>
+                    </div>
+                </div>
+				<button class="login-btn btn" type="submit" (click)="register()">{{'register' | translate}}</button>
+				
+
+			</div>
+		</div>
+		<div class="image">
+		</div>
+	</div>
+</div>

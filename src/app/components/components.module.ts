@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [HeaderComponent, FooterComponent, BannerComponent],
   imports: [
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    RouterModule
   ],
   exports: [HeaderComponent, FooterComponent, BannerComponent]
 })

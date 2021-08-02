@@ -2,5 +2,11 @@
     "name":"Nom",
     "email":"Email",
     "password":"Prenom",
-    "phone":"NUmero de telephone"
+    "phone":"NUmero de telephone",
+    "sign_in":"Se Connecter",
+    "login": "pseudo ou address email",
+    "field_required": "Field required",
+    "dont_have_acc": "don't have an account ?",
+    "register":"S'enregistrer",
+    "connect": "Se connecté"
 }

@@ -1,3 +1,59 @@
 
+.login-body{
+    display: flex;
+    height: 94vh;
+}
+.image{
+    flex: 1;
+    background-image: url(https://cdn.evbstatic.com/s3-build/perm_001/c24baa/django/images/login/lateral-image-3.jpg);
+    height: 100% !important;
+    width: 100% !important;
+    background-position: center;
+}
+.form{
+    flex: 1;
+}
+.content{
+    text-align: left;
+    /* margin-block-start: auto; */
+    margin: 20%;
 
-   
+}
+input{
+    border: unset;
+}
+.form-control{
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 10px auto;
+}
+.label{
+    font-size: 12px;
+}
+:focus-visible {
+    outline: none;
+}
+.login-btn{
+    color: #fff;
+    background: #f95c00ee;
+    
+}
+.register-btn{
+    color: #fff;
+    background: #e382e3;
+}
+.btn{
+    border: unset;
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.no-acc{
+    text-align: center;
+    font-size: 12px;
+    color: #f95c00;
+    margin: 20px;
+}

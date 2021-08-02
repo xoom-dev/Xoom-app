@@ -1,3 +1,28 @@
 <div class="container">
-	login works
+	<div class="login-body">
+		<div class="form">
+			<div [formGroup]="loginForm"  class="content">
+				<h2>{{'sign_in' | translate}}</h2>
+
+				<div class="form-control">
+					<div class="label">{{'login'| translate}} <span class="validation-error">*</span> </div>
+					<input id="username" type="text" formControlName="username">
+				</div>
+				<div class="validation-error" *ngIf="!loginForm.controls.username.valid && submitTrigger">{{'field_required' | translate}}</div>
+
+				<div class="form-control">
+					<div class="label">{{'password' | translate}}<span class="validation-error">*</span> </div>
+					<input id="password" type="text" formControlName="password">
+				</div>
+				<div class="validation-error" *ngIf="!loginForm.controls.password.valid && submitTrigger">{{'field_required' | translate}}</div>
+
+				<button class="login-btn btn" type="submit" (click)="login()">{{'connect' | translate}}</button>
+				<div class="no-acc">{{'dont_have_acc' | translate}}</div>
+				<button class="btn register-btn" (click) = "register('/register')" type="button">{{'register' | translate}}</button>
+
+			</div>
+		</div>
+		<div class="image">
+		</div>
+	</div>
 </div>

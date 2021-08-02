@@ -8,22 +8,24 @@ import { HomeComponent } from './home/home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ComponentsModule } from '../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { RegistrationComponent } from './registration/registration.component';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 const route:Routes = [
-  { path: 'login', redirectTo: 'home'},
+  { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'event/:id', component: EventDetailComponent },
+  { path: 'ticket/:Id', component: TicketDetailsComponent },
   { path: '', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
-  // {
-  //   path: 'event-detail',
-  //   component: EventDetailComponent,
-  //   canActivate: [AuthGuard],
-  // },
+  
+  
 
 
 ]
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, EventDetailComponent],
+  declarations: [LoginComponent, HomeComponent, EventDetailComponent, RegistrationComponent, TicketDetailsComponent],
   imports: [
     CommonModule,
     FormsModule,
