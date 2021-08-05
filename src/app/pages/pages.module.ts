@@ -8,10 +8,8 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ComponentsModule } from '../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
 const route:Routes = [
-  { path: 'login', redirectTo: 'home'},
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home' },
-  { path: '**', redirectTo: 'home' },
   // {
   //   path: 'event-detail',
   //   component: EventDetailComponent,

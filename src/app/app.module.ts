@@ -11,7 +11,10 @@ import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {environment} from '../environments/environment';
+import {AuthenticationModule} from './authentication/authentication.module';
+import {DashboardModule} from "./dashboard/dashboard.module";
 
+// tslint:disable-next-line:typedef
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
@@ -26,6 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AuthenticationModule,
+    DashboardModule,
     ComponentsModule,
     ReactiveFormsModule,
     TranslateModule.forChild({
