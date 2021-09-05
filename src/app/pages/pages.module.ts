@@ -8,9 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ComponentsModule } from '../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { TicketsComponent } from './tickets/tickets.component';
 const route:Routes = [
   { path: 'login', redirectTo: 'home'},
   { path: 'home', component: HomeComponent },
+  { path: 'event/:id', component: EventDetailComponent },
+  { path: 'ticket', component: TicketsComponent },
   { path: '', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },
   // {
@@ -23,7 +26,7 @@ const route:Routes = [
 ]
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, EventDetailComponent],
+  declarations: [LoginComponent, HomeComponent, EventDetailComponent, TicketsComponent],
   imports: [
     CommonModule,
     FormsModule,
