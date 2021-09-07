@@ -10,10 +10,10 @@ import {User} from '../../models/User';
 export class FirebaseService {
 
   user: any;
-  constructor(private fireBase: FirebaseApp, private route: Router) { }
+  constructor(private fireBase: FirebaseApp, private firebaseAuth: AngularFireAuth, private route: Router) { }
 
   signIn(email: string, password: string): any {
-    this.fireBase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    this.firebaseAuth.signInWithEmailAndPassword(email, password).then(() => {
       const currentUser = this.fireBase.auth().currentUser;
       const user: User = {
         displayName: currentUser.displayName,
@@ -22,14 +22,24 @@ export class FirebaseService {
         uid: currentUser.uid
       };
       this.setUserData(user);
-      // this.route.navigate(['/dashboard']);
+      this.route.navigate(['/dashboard']);
     }).catch((error) => {
-      console.log(error);
+      alert('The password or email is invalid');
     });
   }
 
+  getLogInUserId(): any{
+    const currentUser = this.fireBase.auth().currentUser;
+    const user: User = {
+      displayName: currentUser.displayName,
+      email: currentUser.email,
+      emailVerified: currentUser.emailVerified,
+      uid: currentUser.uid
+    };
+    return user;
+  }
   signup(email: string, password: string, name: string): any {
-    this.fireBase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
+    this.firebaseAuth.createUserWithEmailAndPassword(email, password).then((userCredential) => {
       this.sendVerificationEmail();
       this.fireBase.auth().currentUser.updateProfile(
         {
@@ -63,7 +73,7 @@ export class FirebaseService {
   }
 
   isLoggedIn(): boolean {
-    if (localStorage.getItem('user') !== null ){
+    if (JSON.parse(localStorage.getItem('user')) !== null){
       return true;
     }
     return false;
@@ -76,6 +86,7 @@ export class FirebaseService {
   signout(): void{
     this.fireBase.auth().signOut().then(() => {
       localStorage.removeItem('user');
+      this.route.navigate(['/auth/signin']);
     }).catch((error) => {
       console.log(error);
     });
@@ -98,5 +109,12 @@ export class FirebaseService {
   }
 
 
-
+  AuthLogin(provider): any {
+    return this.firebaseAuth.signInWithPopup(provider).then((result) => {
+      // successful
+      this.route.navigate(['/dashboard']);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
 }

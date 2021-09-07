@@ -12,7 +12,7 @@ import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {environment} from '../environments/environment';
 import {AuthenticationModule} from './authentication/authentication.module';
-import {DashboardModule} from "./dashboard/dashboard.module";
+import {DashboardModule} from './dashboard/dashboard.module';
 
 // tslint:disable-next-line:typedef
 export function HttpLoaderFactory(http: HttpClient) {
