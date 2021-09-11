@@ -9,6 +9,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ComponentsModule } from '../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { TicketsComponent } from './tickets/tickets.component';
+import { MatDialogModule } from '@angular/material/dialog';
 const route:Routes = [
   { path: 'login', redirectTo: 'home'},
   { path: 'home', component: HomeComponent },
@@ -33,6 +34,7 @@ const route:Routes = [
     ComponentsModule,
     ReactiveFormsModule,
     TranslateModule,
+    MatDialogModule,
     RouterModule.forChild(route)
   ],
 })

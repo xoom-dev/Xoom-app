@@ -9,6 +9,8 @@ import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialog, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -31,10 +33,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
     }
-    })
+    }),
+    BrowserAnimationsModule
     
   ],
-  providers:[TranslateStore ],
+  providers:[TranslateStore, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
