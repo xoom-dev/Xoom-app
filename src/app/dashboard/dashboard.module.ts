@@ -10,7 +10,7 @@ import { GuestListComponent } from './pages/guest-list/guest-list.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {DashboardRoutingModule} from './dashboard-routing';
 import {FirebaseService} from '../services/firebase/firebase.service';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
 import { CreateTicketComponent } from './pages/create-ticket/create-ticket.component';
 
 

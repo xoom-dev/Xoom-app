@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from '../../../services/firebase/firebase.service';
 import {EventService} from '../../../services/event/event.service';
-import {log} from "util";
 
 @Component({
   selector: 'app-events',
@@ -17,18 +16,17 @@ export class EventsComponent implements OnInit {
     this.getAllEvents();
   }
 
-
   getAllEvents(): void{
     this.eventService.getEvents().subscribe(
-      (res: any) => {
-        this.events = res.map(e => {
-          return {
-            event: e.payload.doc.data()
-          };
-        });
+      response => {
+        this.events = response.map((e) => ({id: e.payload.doc.id, ...e.payload.doc.data()}));
         console.log(this.events);
-      }
-    );
+      });
+  }
+
+  deleteEvent(eventId: string): void{
+   this.eventService.deleteEvent(eventId);
+   this.getAllEvents();
   }
 
 }

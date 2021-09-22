@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-create-ticket',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTicketComponent implements OnInit {
 
-  constructor() { }
+  eventId: string;
+
+  constructor( private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getEventId();
+  }
+  getEventId(): void {
+    this.activatedRoute.params.subscribe(
+      (param) => {
+        this.eventId = param.eventId;
+      }
+    );
   }
 
 }

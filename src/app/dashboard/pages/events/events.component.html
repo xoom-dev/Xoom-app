@@ -27,7 +27,6 @@
         <tr>
           <td class="card-body">Events</td>
           <td class="card-body">Tickets sold</td>
-          <td class="card-body">Total amount</td>
           <td class="card-body">Status</td>
           <td class="card-body">action</td>
         </tr>
@@ -39,20 +38,17 @@
               <img class="img-thumbnail" src="assets/images/business-conference.jpg" style="height: 50px">
             </div>
             <div class="col-md-auto">
-              <h6>  {{event.event.name}} </h6>
+              <h6>  {{event.name}} </h6>
               <div>
-                <small>{{event.event.venue}}</small>
+                <small>{{event.venue}}</small>
               </div>
               <div>
-                <small> {{event.event.start_date}} {{event.event.start_time}} </small>
+                <small> {{event.start_date}} {{event.start_time}} </small>
               </div>
             </div>
           </td>
           <td class="card-body event">
             <span>5</span>/ 50
-          </td>
-          <td class="card-body event">
-            <div class="col"><span>5000</span> xfa</div>
           </td>
           <td class="card-body event">
             <div class="col"> On sale </div>
@@ -69,13 +65,16 @@
                     <a class="item"> Edit Event </a>
                   </div>
                   <div class="dropdown-content-link">
-                    <a class="item" routerLink="/create_ticket/{{event.event.id}}"> Event Tickets </a>
+                    <a class="item" routerLink="/create_ticket/{{event.id}}"> Event Tickets </a>
                   </div>
                   <div class="dropdown-content-link">
                     <a class="item"> Copy Event URL </a>
                   </div>
                   <div class="dropdown-content-link">
                     <a class="item"> Postpone Event </a>
+                  </div>
+                  <div class="dropdown-content-link">
+                    <a class="item" (click)="deleteEvent(event.id)"> Delete Event </a>
                   </div>
                 </div>
               </div>

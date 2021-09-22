@@ -41,8 +41,6 @@ export class CreateEventComponent implements OnInit {
     this.addEventForm.value.userId = this.authService.getLogInUserId().uid;
     this.eventService.createEvent(this.addEventForm.value).then(
       res => {
-        // console.log(res);
-        this.route.navigate(['/create_ticket']);
       }
     );
   }

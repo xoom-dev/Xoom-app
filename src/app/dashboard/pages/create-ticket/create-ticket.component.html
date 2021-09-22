@@ -10,19 +10,109 @@
       <div class="row">
         <div class="row">
           <div class="container">
-            <h4 class="text-center"> Create event tickets </h4>
+            <h4 class="text-center"> Event tickets </h4>
             <div class="row">
-              <div class="col-md-8">
-                <label class="form-label"> Select Events </label><br/>
-                <small> Select and event to see event tickets </small>
-                <select class="form-select">
-                  <option disabled value=""> select event  </option>
-                </select>
+              <div class="col-md-7">
+                <div *ngIf="!eventId">
+                  <label class="form-label"> Select Events </label><br/>
+                  <small> Select and event to see event tickets </small>
+                  <select class="form-select">
+                    <option disabled value=""> select event  </option>
+                  </select>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+
+                <div class="container">
+                  <div class="row">
+                    <table class="table table-striped table-responsive-sm table-responsive-md">
+                      <thead class="cap">
+                      <tr>
+                        <td class="card-body">Name</td>
+                        <td class="card-body"> Amount </td>
+                        <td class="card-body"> available</td>
+                        <td class="card-body"> sold </td>
+                        <td class="card-body">action</td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr class="shadow">
+                        <td>
+                          <div class="col-md-auto">
+                            VIP
+                          </div>
+                        </td>
+                        <td>
+                          5000 <span>xaf</span>
+                        </td>
+                        <td>
+                          25
+                        </td>
+                        <td>
+                          15
+                        </td>
+                        <td>
+                          <div>
+                            <button class="btn btn-outline-dark btn-sm"> edit </button>
+                            <button class="btn btn-danger btn-sm"> delete </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="shadow" style="padding-top: 2.0rem">
+                        <td>
+                          <div class="col-md-auto">
+                            VIP
+                          </div>
+                        </td>
+                        <td>
+                          5000 <span>xaf</span>
+                        </td>
+                        <td>
+                          25
+                        </td>
+                        <td>
+                          15
+                        </td>
+                        <td>
+                          <div>
+                            <button class="btn btn-outline-dark btn-sm"> edit </button>
+                            <button class="btn btn-danger btn-sm"> delete </button>
+                          </div>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-4">
-                <div class="card">
+              <div class="col-md-5">
+                <div class="card shadow">
                   <div class="card-body">
-                    <div class="card-title"> Add/Create ticket  </div>
+                    <h3 class="card-title"> Add/Create ticket  </h3>
+                    <div>
+                      <div class="mb-3">
+                        <label class="form-label"> Name </label>
+                        <input type="text" class="form-control">
+                        <small class="form-text">name should be clear and descriptive </small>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"> amount </label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"> number available </label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"> Description </label>
+                        <textarea type="text" class="form-control"></textarea>
+                        <small class="form-text">Description should be descriptive and brief</small>
+                      </div>
+                      <div>
+                        <button class="btn btn-sm btn-danger"> save </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
