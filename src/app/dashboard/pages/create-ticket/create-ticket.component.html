@@ -16,8 +16,9 @@
                 <div *ngIf="!eventId">
                   <label class="form-label"> Select Events </label><br/>
                   <small> Select and event to see event tickets </small>
-                  <select class="form-select">
+                  <select class="form-select" (change)="onChange()" [(ngModel)]="eventId">
                     <option disabled value=""> select event  </option>
+                    <option *ngFor="let event of events" value="{{event.id}}"> {{event.name}} </option>
                   </select>
                 </div>
                 <br/>
@@ -37,17 +38,17 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <tr class="shadow">
+                      <tr *ngFor="let ticket of tickets" class="shadow">
                         <td>
                           <div class="col-md-auto">
-                            VIP
+                            {{ticket.name}}
                           </div>
                         </td>
                         <td>
-                          5000 <span>xaf</span>
+                          {{ticket.amount}} <span>xaf</span>
                         </td>
                         <td>
-                          25
+                          {{ticket.number_available}}
                         </td>
                         <td>
                           15
@@ -58,29 +59,6 @@
                             <button class="btn btn-danger btn-sm"> delete </button>
                           </div>
                         </td>
-                      </tr>
-                      <tr class="shadow" style="padding-top: 2.0rem">
-                        <td>
-                          <div class="col-md-auto">
-                            VIP
-                          </div>
-                        </td>
-                        <td>
-                          5000 <span>xaf</span>
-                        </td>
-                        <td>
-                          25
-                        </td>
-                        <td>
-                          15
-                        </td>
-                        <td>
-                          <div>
-                            <button class="btn btn-outline-dark btn-sm"> edit </button>
-                            <button class="btn btn-danger btn-sm"> delete </button>
-                          </div>
-                        </td>
-                      </tr>
                       </tbody>
                     </table>
                   </div>
@@ -90,29 +68,29 @@
                 <div class="card shadow">
                   <div class="card-body">
                     <h3 class="card-title"> Add/Create ticket  </h3>
-                    <div>
+                    <form [formGroup]="addTicketForm" (ngSubmit)="createTicket()">
                       <div class="mb-3">
                         <label class="form-label"> Name </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" formControlName="name">
                         <small class="form-text">name should be clear and descriptive </small>
                       </div>
                       <div class="mb-3">
                         <label class="form-label"> amount </label>
-                        <input type="text" class="form-control">
+                        <input type="number" class="form-control" formControlName="amount">
                       </div>
                       <div class="mb-3">
                         <label class="form-label"> number available </label>
-                        <input type="text" class="form-control">
+                        <input type="number" class="form-control" formControlName="number_available">
                       </div>
                       <div class="mb-3">
                         <label class="form-label"> Description </label>
-                        <textarea type="text" class="form-control"></textarea>
+                        <textarea type="text" class="form-control" formControlName="description"></textarea>
                         <small class="form-text">Description should be descriptive and brief</small>
                       </div>
                       <div>
-                        <button class="btn btn-sm btn-danger"> save </button>
+                        <button type="submit" class="btn btn-sm btn-danger"> save </button>
                       </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
 
