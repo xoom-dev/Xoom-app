@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/dashboard"> XOOM </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="float-end">
+      <span class="shadow" style="padding: 9px; border-radius: 50%; background: #FFFFFF; margin: 1.2rem; color: black">
+        {{adv}}
+      </span>
+      <div class="dropdown">
+        <span>{{user.email}}</span>
+        <div class="dropdown-content">
+          <div class="dropdown-content-link">
+            <a> Browse Event </a>
+          </div>
+          <div class="dropdown-content-link">
+            <a> Manage My Events </a>
+          </div>
+          <div class="dropdown-content-link">
+            <a> Tickets </a>
+          </div>
+          <div class="dropdown-content-link">
+            <a> Transactions </a>
+          </div>
+          <div class="dropdown-content-link">
+            <a> Withdrawal </a>
+          </div>
+          <div class="dropdown-content-link">
+            <a> Account setting </a>
+          </div>
+          <div class="dropdown-content-link">
+            <a (click)="logout()"> Logout </a>
+          </div>
+        </div>
+      </div>
+      <span style="margin: 0.6rem;" class="dropdown">  </span>
+      <i class="fas fa-angle-down"></i>
+    </div>
+  </div>
+</nav>
+
