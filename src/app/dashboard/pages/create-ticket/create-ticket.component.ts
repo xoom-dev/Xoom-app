@@ -71,4 +71,9 @@ export class CreateTicketComponent implements OnInit {
     }
   }
 
+  deleteTicket(ticketId): void{
+      this.ticketService.deleteTicket(ticketId);
+      this.getEventTickets();
+  }
+
 }
