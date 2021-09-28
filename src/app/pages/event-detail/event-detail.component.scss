@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.event-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 30px;
+    margin: 30px 0;
+}
+
+// THE BOXES
+
+.box.two {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.summary-info .date {
+    margin-top: 15px;
+}
+
+.summary-info h3.event-title {
+    padding: 20px 0;
+}
+
+.box.two .fee {
+    margin-top: 20px;
+}
+
+.box.three {
+    padding: 15px 0;
+    align-self: center;
+}
+
+.box.three .share-icons {
+   // margin-left: 20px;
+}
+
+.box.three .share-icons svg {
+    margin-right: 30px;
+    width: 25;
+}
+
+.box.four {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.box.four button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0e8548;
+    color: #fff;
+}
+
+.box.five {
+    padding: 30px 0;
+}
+
+.box.five .share .social-icons {
+    margin-top: 10px;
+}
+
+.box.five .share .social-icons svg {
+    margin: 10px 20px 10px 0;
+}
+
+.box.six {
+    padding: 30px 0;
+}
+
+.event-image img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.five .detail-left-info {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.five .detail-left-info p, .six .detail-right-info p {
+    margin-top: 15px;
+}
+
+.detail-right-info .location{
+    padding-top: 20px;
+}
+
+// MEDIA QUERY
+
+@media (max-width: 1024px) {
+    .event-detail {
+        max-width: 88%;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-detail {
+        max-width: 90%;
+    }
+
+    .box.one {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .box.two {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .event-detail {
+        max-width: 90%;
+    }
+
+    .three {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .four {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    .five {
+        grid-column: 1/3;
+    }
+    .six {
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+}
+
+@media (max-width: 400px) {
+    .three {
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+    .four {
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+    .six {
+        grid-row: 5/6;
+    }
+}
+
+

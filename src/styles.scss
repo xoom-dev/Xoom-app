@@ -14,10 +14,12 @@ html,body{
     margin: 0px;
     }
         
-    .container{
+    .mycontainer{
         // height: 100%;
         width: 100% !important;
         text-align: center;
         align-content: center;
         margin: 0px;
         }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
