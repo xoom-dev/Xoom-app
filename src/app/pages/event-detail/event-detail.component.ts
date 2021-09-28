@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class EventDetailComponent  {
   constructor(public dialog: MatDialog) {
-    this.openDialog();
+    // this.openDialog();
   }
 
   openDialog() {

@@ -10,14 +10,18 @@ import { GuestListComponent } from './pages/guest-list/guest-list.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {DashboardRoutingModule} from './dashboard-routing';
 import {FirebaseService} from '../services/firebase/firebase.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateTicketComponent } from './pages/create-ticket/create-ticket.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, SidebarComponent, HomeComponent, EventsComponent, CreateEventComponent, EditEventComponent, GuestListComponent, ProfileComponent],
+  declarations: [NavbarComponent, SidebarComponent, HomeComponent, EventsComponent, CreateEventComponent, EditEventComponent, GuestListComponent, ProfileComponent, CreateTicketComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [],
   providers: [

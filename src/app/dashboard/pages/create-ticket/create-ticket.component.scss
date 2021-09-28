@@ -1,20 +1,11 @@
-.navbar{
-  background: #2B4F9D;
-  color: white;
+small{
+  font-weight: lighter;
 }
-.navbar-brand{
-  color: #FFFFFF;
-}
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 240px;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 6px 11px;
   z-index: 1;
@@ -23,7 +14,7 @@
 .dropdown-content-link {
   text-decoration: none;
   color: #55514F;
-  padding: 0.9rem 0.9rem;
+  padding: 1.1rem 0.9rem;
   font-size: 1.0rem;
 }
 .dropdown-content-link :hover{
@@ -37,4 +28,16 @@
   color: #55514F;
   cursor: pointer;
   text-decoration: none;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.cap{
+  font-weight: normal;
+  padding: 20px 15px;
+  background: #55514F;
+  color: white;
+}
+.event{
+  padding-right: 5.0rem;
 }

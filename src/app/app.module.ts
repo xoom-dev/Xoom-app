@@ -10,14 +10,12 @@ import { AngularFireModule} from '@angular/fire';
 import { ComponentsModule } from './components/components.module';
 import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialog, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-=======
 import {environment} from '../environments/environment';
 import {AuthenticationModule} from './authentication/authentication.module';
 import {DashboardModule} from "./dashboard/dashboard.module";
->>>>>>> 52f51f8e987667bc0fb8f02abdeef5b46f18531d
+
 
 // tslint:disable-next-line:typedef
 export function HttpLoaderFactory(http: HttpClient) {
@@ -44,18 +42,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
     }
-<<<<<<< HEAD
     }),
     BrowserAnimationsModule
     
   ],
   providers:[TranslateStore, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
-=======
-    })
-
-  ],
-  providers: [TranslateStore ],
->>>>>>> 52f51f8e987667bc0fb8f02abdeef5b46f18531d
     bootstrap: [AppComponent]
 })
 export class AppModule { }
