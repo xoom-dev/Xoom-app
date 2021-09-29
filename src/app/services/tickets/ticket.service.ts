@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {FirebaseApp} from '@angular/fire';
-import {rejects} from "assert";
+import {rejects} from 'assert';
 
 @Injectable({
   providedIn: 'root'

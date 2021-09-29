@@ -22,10 +22,14 @@ export class EventService {
     return events;
   }
 
+  getEventById(id: string): any {
+    const event = this.angularFirestore.collection('events', ref => ref.where('Id', '==', id)).snapshotChanges();
+    return event;
+  }
+
   getAllEvent(): any {
     const events = this.angularFirestore.collection('events').snapshotChanges();
     return events;
-
   }
 
   createEvent(event: any): any {
@@ -46,6 +50,7 @@ export class EventService {
       error => rejects(error)
     );
   }
+
 
 
 }
