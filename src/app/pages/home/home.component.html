@@ -2,7 +2,7 @@
 <div class="home">
     <div class="card-container">
 
-        <div class="card-media" *ngFor="let event of events"  (click) ="openDetails()">
+        <div class="card-media" *ngFor="let event of events"  (click) ="openDetails(event.id)">
             <div  [style.backgroundImage]="'url('+ event.poster +')'" class="image-container poster">
                 <!-- <img class="poster" src="{{event.poster}}" alt="  "> -->
                 <span class="event-caption">{{event.name}}</span>

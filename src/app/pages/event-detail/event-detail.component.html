@@ -8,13 +8,13 @@
         </div>
         <div class="box two">
             <div class="summary-info">
-                <div class="date">Dec<br>30</div>
-                <h3 class="event-title">The Louange Live Audience Show December 2021</h3>
+                <div class="date">{{eventDetail?.start_date?.getMonth()}}<br>{{eventDetail?.start_date?.getDay()}}</div>
+                <h3 class="event-title">{{eventDetail?.name}}</h3>
                 <div class="organiser">by The Newels Old Boys</div>                    
             </div>
             <div class="fee">Free</div>
         </div>
-        <div class="box three">
+        <div class="box three" *ngIf="!eventDetail?.poster">
             <div class="share-icons">
                 <svg viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"/>
@@ -25,6 +25,7 @@
                   <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>
             </div>
+            <div *ngIf="eventDetail?.poster"  [style.backgroundImage]="'url('+ eventDetail?.poster +')'" class="image-container poster">
         </div>
         <div class="box four">
             <button>Register</button>
@@ -32,7 +33,7 @@
         <div class="box five">
             <div class="detail-left-info">
                 <h3 class="label">Description</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus ducimus error eaque consequuntur natus dicta velit, autem commodi ea nisi inventore excepturi ex rem tempore illo deserunt vel sunt quibusdam accusamus vero repellat fuga. Repudiandae quia consectetur provident earum quis.</p>
+                <p>{{eventDetail?.description}}</p>
             </div>
             <div class="share">
                 <p>Share with Others</p>
@@ -85,11 +86,11 @@
             <div class="detail-right-info">
                 <div class="date">
                     <h3 class="date">Date and time</h3>
-                    <p>Sat, December 30, 2021<br>
-                    12:00 PM - 2:00 PM WAT</p>
+                    <p>{{eventDetail?.start_date}}<br>
+                    {{eventDetail?.start_time}}</p>
                 </div>
                 <div class="location">
-                    Online Event
+                   {{eventDetail?.venue}}
                 </div>
             </div>
         </div>
