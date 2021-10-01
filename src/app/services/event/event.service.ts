@@ -23,7 +23,7 @@ export class EventService {
   }
 
   getEventById(id: string): any {
-    const event = this.angularFirestore.collection('events', ref => ref.where('Id', '==', id)).snapshotChanges();
+    const event = this.angularFirestore.collection('events', ref => ref.where('id', '==', id)).snapshotChanges();
     return event;
   }
 
