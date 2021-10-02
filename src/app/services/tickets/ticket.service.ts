@@ -19,10 +19,17 @@ export class TicketService {
     return new Promise<any>((resolve, reject) => {
       this.angularFirestore.collection('tickets').add(tickets).then(
         response => {
-          // this.route.navigate([`/create_ticket/${response.id}`]);
         },
         error => reject(error));
     });
+  }
+
+  getTickets(id: string): any{
+    return this.angularFirestore.collection('tickets').doc(id).valueChanges();
+  }
+
+  updateTicket(ticket: any, id: string): any{
+    return this.angularFirestore.collection('tickets').doc(id).update(ticket);
   }
 
   deleteTicket(ticketId: string): any{
