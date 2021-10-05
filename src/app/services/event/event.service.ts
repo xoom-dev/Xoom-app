@@ -23,8 +23,7 @@ export class EventService {
   }
 
   getEventById(id: string): any {
-    console.log(id)
-    const event = this.angularFirestore.collection('events', ref => ref.where('Id', '==', id)).snapshotChanges();
+    const event = this.angularFirestore.collection('events').doc(id).valueChanges();
     return event;
   }
 
@@ -41,6 +40,10 @@ export class EventService {
         },
         error => reject(error));
     });
+  }
+
+  updateEvent(event: any, id: string): any {
+    return this.angularFirestore.collection('events').doc(id).update(event);
   }
 
   deleteEvent(eventId: string): any{

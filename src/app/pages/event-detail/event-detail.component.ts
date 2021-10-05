@@ -29,7 +29,7 @@ ngOnInit(){
 getEventDetail(){
   this.eventService.getEventById(this.id).subscribe(res=>{
    console.log(res);
-    this.eventDetail = res.map((e) => ({id: e.payload.doc.id, ...e.payload.doc.data()}));
+    this.eventDetail = res;
     console.log(this.eventDetail);
   })
 }
