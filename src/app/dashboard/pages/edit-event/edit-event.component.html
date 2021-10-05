@@ -1,1 +1,119 @@
-<p>edit-event works!</p>
+<div>
+  <app-navbar></app-navbar>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-md-9"><br/><br/>
+    <div class="container">
+      <div class="row">
+        <div class="row">
+          <div class="container">
+            <h4 class="text-center"> Edit event </h4>
+          </div>
+          <div class="container">
+            <form [formGroup]="eventEditForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <h3>
+                  Basic Info
+                </h3>
+              </div>
+              <div class="mb-3">
+                <label class="form-label"> Event title </label>
+                <input type="text" class="form-control" formControlName="name"/>
+                <small class="form-text">Event title should be clear and descriptive </small>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div>
+                    <label class="form-label"> type </label>
+                    <select class="form-select" formControlName="type">
+                      <option selected disabled> select event type </option>
+                      <option *ngFor="let eventType of eventTypes" value="{{eventType}}">{{eventType}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div>
+                    <label class="form-label"> Category </label>
+                    <select class="form-select" formControlName="category">
+                      <option selected disabled> select event category </option>
+                      <option *ngFor="let category of categories" value="{{category}}">
+                        {{category}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div><br/>
+              <div class="row">
+                <h3>Location</h3>
+                <div class="container btn-group">
+                  <button class="btn btn-danger"> Venue </button>
+                  <button class="btn btn-outline-dark"> online  </button>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"> Event venue </label>
+                  <input type="text" class="form-control" formControlName="venue">
+                  <small class="form-text">Help people in the area discover your event and let attendees know where to show up. </small>
+                </div>
+              </div>
+              <div class="row">
+                <div class="container">
+                  <h4> Date and time </h4>
+                  <p><small>Tell event-goers when your event starts and ends so they can make plans to attend.</small></p>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label class="form-label"> Start date </label>
+                      <input type="date" class="form-control" formControlName="start_date">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label class="form-label"> Start time </label>
+                      <input type="time" class="form-control" formControlName="start_time">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label class="form-label"> End date </label>
+                      <input type="date" class="form-control" formControlName="end_date">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label class="form-label"> End time </label>
+                      <input type="time" class="form-control" formControlName="end_time">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="container">
+                    <h4>Description</h4>
+                    <p><small>Add more details to your event like your schedule, sponsors, or featured guests.</small></p>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label"> Event summary </label>
+                    <input type="text" class="form-control" formControlName="summary">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label"> Description </label>
+                    <textarea type="text" class="form-control" formControlName="description"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-danger"> Save & continue </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

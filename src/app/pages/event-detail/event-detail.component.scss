@@ -17,7 +17,12 @@
 }
 
 // THE BOXES
+.poster{
+    height: 246px;
+    background-position: center;
+    background-size: cover;
 
+}
 .box.two {
     display: flex;
     flex-direction: column;

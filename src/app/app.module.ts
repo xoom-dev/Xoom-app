@@ -15,6 +15,7 @@ import { MatDialog, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog'
 import {environment} from '../environments/environment';
 import {AuthenticationModule} from './authentication/authentication.module';
 import {DashboardModule} from "./dashboard/dashboard.module";
+import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
 
 
 // tslint:disable-next-line:typedef
@@ -46,7 +47,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule
     
   ],
-  providers:[TranslateStore, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers:[TranslateStore, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    // {
+    //   provide: HTTP_INTERCEPTORS, 
+    //   useClass: TokenInterceptorService, 
+    //   multi: true
+    // }
+  ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

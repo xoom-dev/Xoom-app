@@ -15,7 +15,10 @@ export class CreateEventComponent implements OnInit {
   categories: string[];
   eventTypes;
 
-  constructor(private categoryService: CategoryService, private eventService: EventService, private authService: FirebaseService, private route: Router) { }
+  constructor(private categoryService: CategoryService,
+              private eventService: EventService,
+              private authService: FirebaseService,
+              private route: Router) { }
 
   ngOnInit(): void {
     this.addEventForm = new FormGroup({

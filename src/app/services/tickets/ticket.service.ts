@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {FirebaseApp} from '@angular/fire';
+import {rejects} from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,25 @@ export class TicketService {
     return new Promise<any>((resolve, reject) => {
       this.angularFirestore.collection('tickets').add(tickets).then(
         response => {
-          // this.route.navigate([`/create_ticket/${response.id}`]);
         },
         error => reject(error));
     });
+  }
+
+  getTickets(id: string): any{
+    return this.angularFirestore.collection('tickets').doc(id).valueChanges();
+  }
+
+  updateTicket(ticket: any, id: string): any{
+    return this.angularFirestore.collection('tickets').doc(id).update(ticket);
+  }
+
+  deleteTicket(ticketId: string): any{
+    return this.angularFirestore.collection('tickets').doc(`${ticketId}`).delete().then(
+      response => {
+        alert('ticket successfully deleted');
+      },
+      error => rejects(error)
+    );
   }
 }

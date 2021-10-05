@@ -9,13 +9,13 @@ import { EventService } from 'src/app/services/event/event.service';
 export class HomeComponent implements OnInit{
   constructor(private route: Router, public eventService: EventService){}
     events = [];
-  openDetails(){
-    this.route.navigate(['event', 1])
+  openDetails(id){
+    this.route.navigate(['event', id])
   }
   ngOnInit(){
-    this.getDetails();
+    this.getEvents();
   }
-  getDetails(){
+  getEvents(){
     this.eventService.getAllEvent().subscribe(res=>{
      
       this.events = res.map((e) => ({id: e.payload.doc.id, ...e.payload.doc.data()}));

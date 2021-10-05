@@ -55,8 +55,8 @@
                         </td>
                         <td>
                           <div>
-                            <button class="btn btn-outline-dark btn-sm"> edit </button>
-                            <button class="btn btn-danger btn-sm"> delete </button>
+                            <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#editTicket" (click)="getTicket(ticket.id)"> edit </button>
+                            <button class="btn btn-danger btn-sm" (click)="deleteTicket(ticket.id)"> delete </button>
                           </div>
                         </td>
                       </tbody>
@@ -97,6 +97,43 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--ticket Edit Modal -->
+  <div class="modal fade" id="editTicket" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Edit Ticket </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editTicketForm" (ngSubmit)="updateTicket()">
+            <div class="mb-3">
+              <label class="form-label"> Name </label>
+              <input type="text" class="form-control" formControlName="name">
+              <small class="form-text">name should be clear and descriptive </small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label"> amount </label>
+              <input type="number" class="form-control" formControlName="amount">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"> number available </label>
+              <input type="number" class="form-control" formControlName="number_available">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"> Description </label>
+              <textarea type="text" class="form-control" formControlName="description"></textarea>
+              <small class="form-text">Description should be descriptive and brief</small>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-sm btn-danger" data-bs-dismiss="modal"> save </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

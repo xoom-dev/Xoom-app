@@ -12,11 +12,13 @@ import {DashboardRoutingModule} from './dashboard-routing';
 import {FirebaseService} from '../services/firebase/firebase.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CreateTicketComponent } from './pages/create-ticket/create-ticket.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { WithdrawalComponent } from './pages/withdrawal/withdrawal.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, SidebarComponent, HomeComponent, EventsComponent, CreateEventComponent, EditEventComponent, GuestListComponent, ProfileComponent, CreateTicketComponent],
+  declarations: [NavbarComponent, SidebarComponent, HomeComponent, EventsComponent, CreateEventComponent, EditEventComponent, GuestListComponent, ProfileComponent, CreateTicketComponent, TransactionsComponent, WithdrawalComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
