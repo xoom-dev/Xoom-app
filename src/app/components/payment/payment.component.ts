@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EventDetailComponent } from 'src/app/pages/event-detail/event-detail.component';
 import { PaymentService } from 'src/app/services/payment.service';
 
@@ -10,7 +10,7 @@ import { PaymentService } from 'src/app/services/payment.service';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor( private paymentService: PaymentService,
+  constructor( private paymentService: PaymentService,public dialog: MatDialogRef<EventDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
 
   ngOnInit(): void {
@@ -26,11 +26,11 @@ export class PaymentComponent implements OnInit {
       ussd_code: "*126#"
     }
     this.paymentService.makePayment(param).then(res=>{
-      console.log(res);
+      // console.log(res);
     });
   }
 
-  // closeDialog() {
-  //   this.dialogRef.close('Pizza!');
-  // }
+  closeDialog() {
+    this.dialog.close('Pizza!');
+  }
 }
