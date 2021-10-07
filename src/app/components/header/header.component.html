@@ -15,7 +15,8 @@
                 <li>organise</li>
                 <li class="active">help</li>
                 <li>Create an event</li>
-                <li (click)="signIn()">sign in</li>           
+                <li *ngIf="!userdata" (click)="signIn()">sign in</li>  
+                <li *ngIf="userdata">{{userdata.email}}</li>         
            </ul>
        </div>
    </div>
