@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
     $('.toggle-menu').click(function(){
@@ -20,7 +21,9 @@ export class HeaderComponent implements OnInit {
       $('.logo').toggleClass('hide')
     })
   }
-
+  signIn(){
+    this.route.navigateByUrl("auth/signin")
+  }
 }
 
 declare var $;
