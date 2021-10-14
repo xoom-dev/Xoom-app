@@ -1,0 +1,29 @@
+.payment-option {
+    text-align: center;
+}
+
+.payment-method {
+    display: flex;
+}
+
+.payment-method div {
+    margin: 10px;
+}
+
+.payment-method img {
+    max-height: 80px;
+    max-width: 200px;
+}
+
+input {
+    padding: 10px;
+    margin: 30px 0;
+}
+
+.pay-button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0e8548;
+    color: #fff;
+}
