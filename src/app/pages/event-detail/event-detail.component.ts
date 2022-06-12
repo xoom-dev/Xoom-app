@@ -21,7 +21,7 @@ export class EventDetailComponent implements OnInit {
   }
 ngOnInit(){
   this.activatedRoute.params.subscribe(res=>{
-    console.log(res);
+   // console.log(res);
     this.id =res.id;
     this.getEventDetail();
   })
@@ -30,14 +30,12 @@ getEventDetail(){
   this.eventService.getEventById(this.id).subscribe(res=>{
    console.log(res);
     this.eventDetail = res;
-    console.log(this.eventDetail);
+    //console.log(this.eventDetail);
   })
 }
   openDialog() {
    const dialogRef = this.dialog.open(PaymentComponent, {
-      data: {
-        animal: 'panda'
-      }
+      data: this.eventDetail
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

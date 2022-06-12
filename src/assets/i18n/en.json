@@ -2,5 +2,8 @@
     "name":"Name",
     "email":"Email",
     "password":"Password",
-    "phone":"Phone"
+    "phone":"Phone",
+    "make_payment": "Make payment",
+    "enter_phone_number":"Enter phone number",
+    "enter_valid_phonenumber": "Enter a valid phone number"
 }

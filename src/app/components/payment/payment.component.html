@@ -1,19 +1,26 @@
 <div class="payment-option">
-  <h3 class="event-title">Evnet Title</h3>
+<div class="close" (click)="closeDialog()">X</div>
+  <h3 class="event-title">
+  {{data.name}}</h3>
   <div class="payment-method">
-    <div class="orange">
-      <img src="assets/images/paymentlogos/orange.jpeg" alt="Orange Money">
+    <div  *ngFor="let paymentProvider of paymentProviders" [ngClass]="activeProvider.code == paymentProvider.code?('selected '+paymentProvider.class ): paymentProvider.class">
+      <img [src]="paymentProvider.imageUrl" alt="{{paymentProvider.name}}" (click)="selectProv(paymentProvider)">
     </div>
-    <div class="mtn">
+    
+    <!-- -<div class="mtn">
       <img src="assets/images/paymentlogos/mtn.jpeg" alt="MTN Mobile Money">
-    </div>
+    </div> -->
   </div>
-
+  <div *ngIf="msg">{{msg | translate}}</div>
   <form action="">
-    <input type="tel" placeholder="Enter phone number">
+  <div class="input-group">
+  <div class="country-code">+237</div>
+  <input id="phonenumber" type="tel" [(ngModel)]="phonenumber" name="phonenumber"  placeholder="{{'enter_phone_number' | translate}}"  [ngModelOptions]="{ updateOn: 'blur' }">
+  </div>
+    
   </form>
 
-  <button class="pay-button">
-    Make payment
+  <button class="pay-button" (click)="validatePayment()">
+    {{'make_payment'|translate}}
   </button>
 </div>

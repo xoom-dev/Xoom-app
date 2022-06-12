@@ -14,12 +14,32 @@
     max-height: 80px;
     max-width: 200px;
 }
-
+.selected{
+border: 1px solid red;
+}
+.event-title{
+text-transform:uppercase;
+}
 input {
     padding: 10px;
     margin: 30px 0;
 }
-
+.country-code{
+margin: auto 0;
+    padding: 11px;
+    border: 1px solid;
+    }
+    .input-group{
+    display: flex;
+    justify-content: center;}
+.close{
+cursor:pointer;
+    position: absolute;
+    right: 33%;
+    top: 8%;
+    margin: 10px;
+    color: #898080;
+}
 .pay-button {
     padding: 10px;
     border-radius: 5px;
